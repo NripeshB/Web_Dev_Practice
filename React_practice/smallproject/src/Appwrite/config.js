@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-import conf from '../conf.js';
-import { Client, ID, Databases, Storage, Query } from "appwrite";
 
-
-export class Service{
-    client  = new Client();
-    databases;
-    bucket;
-=======
  import conf from "./config";
  import { Client, Account,Databases ,Storage, Query, ID } from "appwrite";
 
@@ -15,21 +6,13 @@ export class Service{
     client = new Client();
     bucket;
     databases;
->>>>>>> 2c0e91049a7dacfd19ad9aed51f297a32efbc94d
+
 
     constructor(){
         this.client
         .setEndpoint(conf.appwriteUrl)
         .setProject(conf.appwriteProjectId);
-<<<<<<< HEAD
-    }
 
-
-}
-
-const service = new Service();
-export default service ;
-=======
 
         bucket = new Storage(this.client);
         databases = new Databases(this.client);
@@ -176,4 +159,4 @@ export default service ;
 
 const service = new Service();
 export default service;
->>>>>>> 2c0e91049a7dacfd19ad9aed51f297a32efbc94d
+
