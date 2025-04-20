@@ -36,7 +36,8 @@ export class Authservice{
             return await this.account.get();
             
         } catch (error) {
-            throw error;
+            console.log("No user session:", error.message); // Optional: log it
+        return null;
         }
     }
 
