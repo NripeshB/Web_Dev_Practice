@@ -1,4 +1,4 @@
-import conf from '../conf.js';
+import conf from '../conf/conf.js';
 import { Client, Account, ID } from "appwrite";
 
 
@@ -36,11 +36,12 @@ export class Authservice{
             return await this.account.get();
             
         } catch (error) {
-            throw error;
+            console.log("No user session:", error.message); // Optional: log it
+        return null;
         }
     }
 
-    async deleteSession(){
+    async Logout(){
         try {
             return await this.account.deleteSessions();
         } catch (error) {
